@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.pfm.controller.DashboardController" prefWidth="900" prefHeight="600">
+    <top>
+        <HBox spacing="10" padding="10">
+            <Label fx:id="welcomeLabel" text="Welcome" style="-fx-font-size:16px; -fx-font-weight:bold;" />
+            <Label fx:id="balanceLabel" text="Balance: 0.00" style="-fx-font-size:14px; -fx-padding:0 0 0 20;"/>
+            <Pane />
+            <Button text="Export CSV" onAction="#exportCSV"/>
+            <Button text="Delete Selected" onAction="#deleteSelected"/>
+        </HBox>
+    </top>
+
+    <center>
+        <SplitPane dividerPositions="0.6">
+            <AnchorPane>
+                <VBox spacing="8" padding="10">
+                    <TableView fx:id="table" prefHeight="500" prefWidth="520">
+                        <columns>
+                            <TableColumn fx:id="dateCol" text="Date" prefWidth="100"/>
+                            <TableColumn fx:id="descCol" text="Description" prefWidth="160"/>
+                            <TableColumn fx:id="catCol" text="Category" prefWidth="100"/>
+                            <TableColumn fx:id="amtCol" text="Amount" prefWidth="80"/>
+                            <TableColumn fx:id="typeCol" text="Type" prefWidth="80"/>
+                        </columns>
+                    </TableView>
+                </VBox>
+            </AnchorPane>
+
+            <AnchorPane>
+                <VBox spacing="10" padding="10">
+                    <Label text="Add Transaction" style="-fx-font-size:14px; -fx-font-weight:bold;"/>
+                    <DatePicker fx:id="datePicker" promptText="Date"/>
+                    <TextField fx:id="descField" promptText="Description"/>
+                    <TextField fx:id="categoryField" promptText="Category"/>
+                    <TextField fx:id="amountField" promptText="Amount"/>
+                    <ChoiceBox fx:id="typeChoice"/>
+                    <Button text="Add" onAction="#addTransaction"/>
+                    <PieChart fx:id="pieChart" prefHeight="300" prefWidth="250"/>
+                </VBox>
+            </AnchorPane>
+        </SplitPane>
+    </center>
+</BorderPane>
