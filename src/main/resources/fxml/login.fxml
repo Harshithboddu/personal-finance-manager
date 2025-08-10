@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.pfm.controller.LoginController"
+            prefWidth="360" prefHeight="250" styleClass="root">
+    <children>
+        <VBox alignment="CENTER" spacing="10" AnchorPane.topAnchor="10" AnchorPane.leftAnchor="10" AnchorPane.rightAnchor="10">
+            <Label text="Personal Finance Manager" style="-fx-font-size:18px; -fx-font-weight:bold;"/>
+            <TextField fx:id="usernameField" promptText="Username" />
+            <PasswordField fx:id="passwordField" promptText="Password" />
+            <HBox spacing="10">
+                <Button fx:id="loginBtn" text="Login" onAction="#onLogin"/>
+                <Button fx:id="signupBtn" text="Signup" onAction="#onSignup"/>
+            </HBox>
+            <Label fx:id="messageLabel" />
+        </VBox>
+    </children>
+</AnchorPane>
